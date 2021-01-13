@@ -287,8 +287,10 @@
     }
     
     function getTimeZone(clientjs) {
+        var d = new Date();
+
         return {
-            timeZone: clientjs.getTimeZone()
+            timeZone: d.getTimezoneOffset()
         }
     }
     
